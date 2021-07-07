@@ -14,7 +14,7 @@ module.exports = [
         exposes: [e.contact(), e.battery(), e.voltage()],
         configure: async (device, coordinatorEndpoint) => {
             for (const ep of [1, 2, 3]) {
-                await reporting.bind(device.getEndpoint(ep), coordinatorEndpoint, ['genPowerCfg', 'ssIasZone']);
+                await reporting.bind(device.getEndpoint(ep), coordinatorEndpoint, ['genPowerCfg', 'ssIasZone'], 'genMultistateInput');
             }
         },
     },
